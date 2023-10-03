@@ -1,0 +1,45 @@
+<div class="table-responsive">
+  <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <ng-container matColumnDef="first">
+      <mat-header-cell *matHeaderCellDef class="d-none d-sm-table-cell"> First </mat-header-cell>
+      <mat-cell *matCellDef="let element" class="d-none d-sm-table-cell">{{ element.first }}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="last">
+      <mat-header-cell *matHeaderCellDef class="d-none d-sm-table-cell"> Last </mat-header-cell>
+      <mat-cell *matCellDef="let element" class="d-none d-sm-table-cell">{{ element.last }}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="email">
+      <mat-header-cell *matHeaderCellDef class="d-none d-sm-table-cell"> Email </mat-header-cell>
+      <mat-cell *matCellDef="let element" class="d-none d-sm-table-cell">{{ element.email }}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="address">
+      <mat-header-cell *matHeaderCellDef class="d-none d-sm-table-cell"> Address </mat-header-cell>
+      <mat-cell *matCellDef="let element" class="d-none d-sm-table-cell">{{ element.address }}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="created">
+      <mat-header-cell *matHeaderCellDef class="d-none d-sm-table-cell"> Created </mat-header-cell>
+      <mat-cell *matCellDef="let element" class="d-none d-sm-table-cell">{{ element.created }}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="balance">
+      <mat-header-cell *matHeaderCellDef class="d-none d-sm-table-cell"> Balance </mat-header-cell>
+      <mat-cell *matCellDef="let element" class="d-none d-sm-table-cell">{{ element.balance }}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="actions">
+      <mat-header-cell *matHeaderCellDef class="d-none d-sm-table-cell"> Acciones </mat-header-cell>
+      <mat-cell *matCellDef="let element" class="d-none d-sm-table-cell">
+        <button type="button" class="btn btn-info btn-sm" (click)="detailEmployee(element)">Detail</button>
+        <button type="button" class="btn btn-primary btn-sm" (click)="editEmployee(element)">Edit</button>
+        <button type="button" class="btn btn-danger btn-sm" (click)="deleteEmployee(element)">Delete</button>
+      </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+</div>
